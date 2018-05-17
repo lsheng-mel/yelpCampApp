@@ -1,0 +1,37 @@
+<% include ./partials/header %>
+
+<h1><%= campground.name %></h1>
+<p><%= campground.description %></p>
+<image src="<%= campground.image %>"></image>
+<div>
+	<a href="/campgrounds">Go Back</a>
+
+	<form action="/campgrounds/<%= campground._id %>/edit" method="GET">
+		<button type="submit">Edit</button>
+	</form>
+
+	<form action="/campgrounds/<%= campground._id %>/delete?_method=DELETE" method="POST">
+		<button type="submit">Delete</button>
+	</form>
+
+	<form action="/campgrounds/<%= campground._id %>/comment" method="GET">
+		<button type="submit">Make a Comment</button>
+	</form>
+</div>
+
+<div>
+<h3>Comments</h3>
+	<% comments.forEach(function(comment){ %>
+		<%= comment.author.name %> - posted 10 hours ago
+		<p>
+			<%= comment.comment %>
+		</p>
+		<% if(currentUser && currentUser.id == comment.author.id) { %>
+			<form action='/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/delete?_method=DELETE' action='post'>				
+				<button type='submit'>delete</button>
+			</form>
+		<% } %>
+	<% }) %>
+</div>
+
+<% include ./partials/footer %>
