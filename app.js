@@ -17,6 +17,8 @@ app = express();
 app.set("view engine", "ejs");
 
 app.use(methodOverride('_method'));
+app.use(express.static('public'));
+app.use(express.static('public/style'));
 
 // use the body parser
 app.use(bodyParser.urlencoded({extended: true}));
@@ -206,7 +208,7 @@ app.post("/campgrounds/:id/comment", function(req, res){
 	});
 });
 
-app.get('/campgrounds/:id/comments/:commentid/delete', IsLoggedIn, function(req, res){
+app.delete('/campgrounds/:id/comments/:commentid/delete', IsLoggedIn, function(req, res){
 	Comment.findByIdAndRemove(req.params.commentid, function(err, comment){
 		if(err)
 		{
