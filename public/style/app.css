@@ -1,4 +1,65 @@
 
+.inline-form {
+	display: inline-block;
+}
+
 h3, a {
 	display: inline;
+}
+
+.navbar {
+	height: 100px;
+	margin-bottom: 0;
+}
+
+.img-thumbnail {
+	height: 350px;
+	width: 100%;
+}
+
+.jumbotron {
+	background-color: #00ce95;
+	background: url(https://images.unsplash.com/photo-1502113040754-9e3e85618a00?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f7e655cc68dc37a51ba6cd36e5327ca4&auto=format&fit=crop&w=1650&q=80);
+	background-size: cover;
+	margin-bottom: 0;
+	text-align: center;
+	color: white;
+	height: calc(100vh - 100px);
+}
+
+.jumbotron div {
+    margin-top: 15%;
+    margin-bottom: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background: rgba(10, 130, 4, .6);
+}
+
+body {
+	background-color: rgba(10, 130, 4, .6);
+}
+
+.campgrounds-grid {
+	color: white;
+	text-align: center;
+}
+
+.col {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+a {
+	color: white;
+}
+
+.well {
+	margin-top: 50px;
+	border: 1px solid white;
+	background: white;
+	border-radius: 10px;
+}
+
+.text-right {
+	margin-top: 1rem;
 }

@@ -1,17 +1,34 @@
 <% include ./partials/header %>
 
-<a href="/campgrounds/new">Add a new Campground</a>
+<header class='jumbotron jumbotron-fluid'>
+	<div>
+		<h1>
+			Welcome to YelpCamp!
+		</h1>
+		<h5>
+			View our hand picked campgrounds from all over the world!
+		</h5>
+		<form action='/campgrounds/new' method='get'>
+			<button type='submit' class='btn btn-lg btn-primary'>Add New Campground</button>
+		</form>
+	</div>
+</header>
 
-<% campgrounds.forEach(function(campground){ %>
 <div class='container'>
-	<p>
-		<h3><%= campground.name %></h3>
-		<a href="/campgrounds/<%= campground._id %>">Details</a>
-	</p>
-	<p><%= campground.description %></p>
-	<image src="<%= campground.image %>"></image>
-</div>
+	<div id='campgrounds-grid' class='row equal'>
+		<% campgrounds.forEach(function(campground){ %>
 
-<% }); %>
+			<div class='col col-sm-12 col-md-6 col-lg-4'>
+				<div>
+					<image src="<%= campground.image %>" class='img-fluid img-thumbnail'></image>
+				</div>
+				<h3><%= campground.name %></h3>
+				<form action='/campgrounds/<%= campground._id %>' method='get'>
+					<button type='submit' class='btn btn-info'>More Info</button>
+				</form>
+			</div>
+		<% }); %>
+	</div>
+</div>
 
 <% include ./partials/footer %>

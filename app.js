@@ -8,8 +8,7 @@ bodyParser 				= require("body-parser"),
 
 session					= require('express-session'),
 passport 				= require("passport"),
-passportLocalStrategy 	= require("passport-local").Strategy,
-passportLocalMongoose 	= require("passport-local-mongoose"),
+passportLocalStrategy 	= require("passport-local").Strategy;
 
 app = express();
 
@@ -17,8 +16,8 @@ app = express();
 app.set("view engine", "ejs");
 
 app.use(methodOverride('_method'));
-app.use(express.static('public'));
-app.use(express.static('public/style'));
+
+app.use(express.static(__dirname + '/public'));
 
 // use the body parser
 app.use(bodyParser.urlencoded({extended: true}));
@@ -188,7 +187,7 @@ app.get("/campgrounds/:id/edit", IsLoggedIn, function(req, res){
 
 // comment
 app.get("/campgrounds/:id/comment", IsLoggedIn, function(req, res){
-	res.render("comment");
+	res.render("comment", {campground: {id: req.params.id}});
 });
 
 app.post("/campgrounds/:id/comment", function(req, res){
