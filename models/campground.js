@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 
 // connect to the database
-mongoose.connect("mongodb://localhost/yelp_camp_app");
+mongoose.connect("mongodb://admin:password@13.236.153.137/yelp_camp_app");
 
 // seed the campgrounds
 var campgroundsSchema = new mongoose.Schema({
