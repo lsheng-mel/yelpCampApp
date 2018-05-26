@@ -1,0 +1,8 @@
+-#!/bin/sh      
+ssh ec2-user@52.65.13.26 <<EOF        
+ cd /var/www
+ git pull       
+ npm install       
+ node app.js
+ exit       
+EOF
