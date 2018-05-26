@@ -1,10 +1,10 @@
 #!/bin/sh     
-cd /home/ec2-user/SSH 
+sudo su
+cd /home/ec2-user/SSH/
 ssh -i MyWebServerKeyPair.pem ec2-user@52.65.13.26 <<EOF        
  sudo su
- cd /var/www
+ cd /var/www/yelpCampApp
  git pull
- cd yelpCampApp     
  npm install       
  node app.js
  exit       
