@@ -1,6 +1,5 @@
 #!/bin/sh     
-sudo chmod -R 77 /home/ec2-user
-ssh -i /home/ec2-user/SSH/MyWebServerKeyPair.pem ec2-user@52.65.13.26 <<EOF        
+ssh -i /var/lib/jenkins/SSH/MyWebServerKeyPair.pem ec2-user@52.65.13.26 <<EOF        
  sudo su
  cd /var/www/yelpCampApp
  git pull
