@@ -1,4 +1,4 @@
--#!/bin/sh     
+#!/bin/sh     
 cd /home/ec2-user/SSH 
 ssh -i MyWebServerKeyPair.pem ec2-user@52.65.13.26 <<EOF        
  sudo su
