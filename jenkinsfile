@@ -3,7 +3,6 @@ pipeline {
     stages {
         stage('build') {
             steps {
-            	echo 'Installed the docker.\n'
                 sh 'npm --version'
             }
         }
