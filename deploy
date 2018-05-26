@@ -1,5 +1,6 @@
--#!/bin/sh      
-ssh ec2-user@52.65.13.26 <<EOF        
+-#!/bin/sh     
+cd /home/ec2-user/SSH 
+ssh -i MyWebServerKeyPair.pem ec2-user@52.65.13.26 <<EOF        
  cd /var/www
  git pull       
  npm install       
