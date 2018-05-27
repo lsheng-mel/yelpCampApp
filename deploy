@@ -9,5 +9,5 @@ ssh -o StrictHostKeyChecking=no -i /var/lib/jenkins/workspace/SSH/MyWebServerKey
  echo 'Starting forever new process'
  BUILD_ID=dontKillMe forever -a -l myapp.log app.js &
  echo 'Done. Exiting...'
- exit       
+ exit 0
 EOF
