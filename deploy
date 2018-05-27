@@ -1,5 +1,5 @@
 #!/bin/sh     
-ssh -i /var/lib/jenkins/SSH/MyWebServerKeyPair.pem ec2-user@52.65.13.26 <<EOF        
+ssh -i /var/lib/jenkins/workspace/SSH/MyWebServerKeyPair.pem ec2-user@52.65.13.26 <<EOF        
  echo 'now we are finnaly into the production server!'
  sudo su
  cd /var/www/yelpCampApp
