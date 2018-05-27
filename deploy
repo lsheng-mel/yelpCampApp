@@ -1,10 +1,13 @@
 #!/bin/sh
 ssh -o StrictHostKeyChecking=no -i /var/lib/jenkins/workspace/SSH/MyWebServerKeyPair.pem ec2-user@52.65.13.26 <<EOF        
- echo 'now we are finnaly into the production server!'
  sudo su
  cd /var/www/yelpCampApp
  git pull
- npm install       
- node app.js
+ npm install
+ echo 'Stopping Forever old process'
+ forever stop app.js
+ echo 'Starting forever new process'
+ BUILD_ID=dontKillMe forever -a -l myapp.log app.js &
+ echo 'Done. Exiting...'
  exit       
 EOF
