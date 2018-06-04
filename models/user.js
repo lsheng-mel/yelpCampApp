@@ -1,7 +1,8 @@
 var mongoose = require("mongoose");
 var passportLocalMongoose = require("passport-local-mongoose");
 
-mongoose.connect("mongodb://admin:123mtr00@ds147420.mlab.com:47420/yelp_camp_app");
+var databaseURI = process.env.DATABASEURI || "mongodb://localhost/yelp_camp_app";
+mongoose.connect(databaseURI);
 
 var userSchema = new mongoose.Schema({
 	username: String,
