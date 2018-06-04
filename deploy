@@ -1,5 +1,5 @@
 #!/bin/sh
-ssh -o StrictHostKeyChecking=no -i /var/lib/jenkins/workspace/SSH/MyWebServerKeyPair.pem ec2-user@52.65.13.26 <<EOF        
+ssh -o StrictHostKeyChecking=no -i /var/lib/jenkins/workspace/SSH/MyWebServerKeyPair.pem ec2-user@13.210.158.150 <<EOF        
  sudo su
  cd /var/www/yelpCampApp
  git pull
